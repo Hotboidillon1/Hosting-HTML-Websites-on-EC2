@@ -1,0 +1,18 @@
+NOTE; HTML websit 
+How to get the application code on the ec2 instance
+
+  key pair
+ instancecreate security group = port 22 and 80
+  Lunch ec2
+ install software 
+
+ #!/bin/bash
+ sudo su 
+ yum update -y 
+ yum install -y httpd 
+ cd /var/www/html 
+ weget https://github.com/azeezsalu/jupiter/archive/refs/heads/main.zip unzip main.zip
+ cp -r jupiter-main/* /var/www/html
+ rm -rf jupiter-main main.zip
+ systemctl enable httpd 
+ systemctl start httpd
